@@ -2,9 +2,41 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#d8d0c1"><title>Wake Up | AUTOPILOT</title><link rel="stylesheet" href="styles.css"><script src="music.js" defer></script></head>
 <body class="sample-body"><header class="nav"><a class="brand" href="index.html">XXXXX BLANK</a><div class="step">04 / 04</div></header>
 <main>
-<section class="wake-intro">
-  <figure class="brain"><img src="Screenshot_20260928-215542_Instagram%20%281%29.png" alt="Autopilot Hemisphere"></figure>
-  <div><p class="eyebrow">YOU THOUGHT YOU UNDERSTOOD AUTOPILOT.</p><h1>NOW WATCH<br>IT WORK.</h1></div>
+<section class="killbox-gate" id="killboxGate">
+  <div class="charlotte-guide">
+    <img src="Screenshot_20260928-215240_Instagram%20%281%29.png" alt="Charlotte">
+    <p>“What the fuck those bitches do to my goddamn room?”</p>
+  </div>
+  <button class="killbox-door" id="enterKillbox" type="button" aria-label="Look inside the Kill Box">
+    <img src="killbox.jpeg" alt="The Kill Box door">
+    <span class="look-inside">LOOK INSIDE?</span>
+    <span class="door-glow" aria-hidden="true"></span>
+  </button>
+</section>
+
+<section class="killbox-room" id="killboxRoom" aria-hidden="true">
+  <div class="room-scene">
+    <img class="room-bg" src="TuckUshdtBH.jpeg" alt="Inside the Kill Box">
+    <div class="tuck-warning" id="tuckWarning">
+      <b>TUCK</b>
+      <p>“You shouldn't be in here. You need to finish looking and leave. It's not safe here.”</p>
+    </div>
+    <button class="hidden-envelope" id="hiddenEnvelope" type="button" aria-label="Retrieve the hidden photographs"><span>✉</span></button>
+    <div class="locked-note" id="lockedNote">YOU CAN'T LEAVE YET.</div>
+  </div>
+</section>
+
+<section class="evidence-vault" id="evidenceVault" aria-hidden="true">
+  <div class="evidence-head"><span>RETRIEVED // DO NOT LOSE THESE</span><button id="closeEvidence" type="button">KEEP THE PHOTOS →</button></div>
+  <div class="evidence-spread">
+    <figure><img src="theWhitesHome.jpeg" alt="Retrieved photograph"></figure>
+    <figure><img src="autopilotfuel.jpeg" alt="Retrieved photograph"></figure>
+    <figure><img src="Chinaman.jpeg" alt="Retrieved photograph"></figure>
+    <figure><img src="crashandburn.jpeg" alt="Retrieved photograph"></figure>
+    <figure><img src="killbox.jpeg" alt="Retrieved photograph"></figure>
+    <figure><img src="Screenshot_20260928-215317_Instagram%20%281%29.png" alt="Retrieved photograph"></figure>
+    <figure><img src="Screenshot_20260928-215240_Instagram%20%281%29.png" alt="Retrieved photograph"></figure>
+  </div>
 </section>
 <section class="cover-threshold"><button class="cover-door" id="continue" aria-label="Open the book"><img src="AutopilotCover.png" alt="AUTOPILOT book cover"><span>OPEN THE BOOK →</span></button></section>
 <section class="reader-shell" id="reader">
@@ -21,6 +53,14 @@
 </section>
 </main><footer><a href="author.html">← BACK</a><span>XXXXX BLANK // AUTOPILOT</span></footer>
 <script>
+
+const gate=document.getElementById('killboxGate'),room=document.getElementById('killboxRoom'),vault=document.getElementById('evidenceVault'),enter=document.getElementById('enterKillbox'),envelope=document.getElementById('hiddenEnvelope'),closeEvidence=document.getElementById('closeEvidence');
+let photosRetrieved=sessionStorage.getItem('autopilotPhotosRetrieved')==='yes';
+function enterRoom(){gate.classList.add('gone');room.classList.add('show');room.setAttribute('aria-hidden','false');document.body.classList.add('killbox-locked');history.pushState({killbox:true},'',location.href);}
+enter.onclick=enterRoom;
+envelope.onclick=()=>{photosRetrieved=true;sessionStorage.setItem('autopilotPhotosRetrieved','yes');vault.classList.add('show');vault.setAttribute('aria-hidden','false');};
+closeEvidence.onclick=()=>{vault.classList.remove('show');vault.setAttribute('aria-hidden','true');room.classList.remove('show');room.setAttribute('aria-hidden','true');document.body.classList.remove('killbox-locked');gate.classList.remove('gone');document.querySelector('.cover-threshold').scrollIntoView({behavior:'smooth'});};
+window.addEventListener('popstate',()=>{if(room.classList.contains('show')&&!photosRetrieved){history.pushState({killbox:true},'',location.href);const n=document.getElementById('lockedNote');n.classList.add('flash');setTimeout(()=>n.classList.remove('flash'),1200);}});
 const reader=document.getElementById('reader'),pages=document.getElementById('pages'),cards=[...pages.children],counter=document.getElementById('counter');
 document.getElementById('continue').onclick=()=>reader.scrollIntoView({behavior:'smooth'});
 function active(){let i=Math.round(pages.scrollLeft/pages.clientWidth);i=Math.max(0,Math.min(cards.length-1,i));counter.textContent=(i+1)+' / '+cards.length;return i}
