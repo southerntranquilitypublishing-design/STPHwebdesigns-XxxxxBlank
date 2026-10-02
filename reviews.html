@@ -16,10 +16,17 @@
 </section>
 <div class="death-screen" id="death" aria-hidden="true">
   <div class="blood"></div><p class="eyebrow">BAD CHOICE.</p><h1>YOU DIED.</h1>
-  <div class="death-faces"><img src="Screenshot_20260928-215240_Instagram%20%281%29.png" alt="ChOke"><img src="Screenshot_20260928-215418_Instagram%20%281%29.png" alt="Burn"></div>
-  <div class="thought-bubble charlotte-blood death-thought">Turns out running wasn&#39;t much of a plan.</div>
+  <div class="death-faces"><img src="Screenshot_20260928-215240_Instagram%20%281%29.png" alt="ChOke"><img src="Screenshot_20260928-215418_Instagram%20%281%29.png" alt="Violet"></div>
+  <div class="thought-bubble death-duo-thought">Jesus Fuck dude ask Charlotte to save you!</div>
+  <button class="btn primary rescue" id="rescue">ASK HER!</button>
+  <img class="rescue-charlotte" id="rescueCharlotte" src="rightfaceChar.png" alt="Charlotte">
+  <div class="thought-bubble charlotte-blood rescue-warning" id="rescueWarning">You stupid fuck run again I won't save your bitch ass again!</div>
 </div>
 </main>
 <footer><a href="index.html">← BACK</a><span>XXXXX BLANK // AUTOPILOT</span></footer>
-<script>const run=document.getElementById('run'),death=document.getElementById('death');run.addEventListener('click',()=>{death.classList.add('show');death.setAttribute('aria-hidden','false');document.body.classList.add('death-locked');death.scrollIntoView({behavior:'instant',block:'start'});});</script>
+<script>
+const run=document.getElementById('run'),death=document.getElementById('death'),rescue=document.getElementById('rescue'),rc=document.getElementById('rescueCharlotte'),rw=document.getElementById('rescueWarning');
+run.addEventListener('click',()=>{death.classList.add('show');death.setAttribute('aria-hidden','false');document.body.classList.add('death-locked');});
+rescue.addEventListener('click',()=>{if(rescue.disabled)return;rescue.disabled=true;rescue.classList.add('rescue-used');rc.classList.add('show');rw.classList.add('show');setTimeout(()=>{window.location.href='author.html';},5000);});
+</script>
 </body></html>
