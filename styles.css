@@ -91,3 +91,54 @@
 .creator .creator-copy .character-bio .bio-voice p{font-size:clamp(19px,4.3vw,25px)!important;line-height:1.48!important}
 .creator .creator-copy .character-bio .charlotte-voice p{font-size:clamp(22px,5.1vw,29px)!important;line-height:1.37!important}
 .creator .creator-copy .character-bio .bio-voice h4{font-size:clamp(21px,5vw,29px)!important}
+
+/* Character voices throughout the full experience, not only the biography */
+.crash-intro .character-voice,
+.crash-intro .character-voice p:not(.speaker),
+.crash-intro .character-voice .hard {
+  font-family:"Permanent Marker","Comic Sans MS",cursive!important;
+  color:#82b9ff!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  line-height:1.55!important;
+}
+.crash-intro .character-voice p:not(.speaker){font-size:clamp(19px,4.6vw,27px)!important}
+.charlotte-page .charlotte-copy,
+.charlotte-page .charlotte-copy p:not(.speaker),
+.charlotte-page .charlotte-copy .mock {
+  font-family:Blaka,"Arial Black",cursive!important;
+  color:#ff7777!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  line-height:1.42!important;
+}
+.charlotte-page .charlotte-copy p:not(.speaker){font-size:clamp(22px,5.1vw,29px)!important}
+.charlotte-page .charlotte-copy .mock{border-left-color:#ff7777!important}
+.death-screen .death-duo-lines .girl-one {
+  font-family:"Comic Sans MS","Comic Sans",cursive!important;
+  color:#ffb6d7!important;
+  font-weight:400!important;
+  font-style:normal!important;
+}
+.death-screen .death-duo-lines .girl-two {
+  font-family:"Architects Daughter",cursive!important;
+  color:#85e8e2!important;
+  font-weight:400!important;
+  font-style:normal!important;
+}
+.death-screen .death-duo-lines .girl-voice{line-height:1.4!important}
+.tuck-warning .tuck-thought,
+.tuck-warning .thought-bubble,
+.tuck-thought {
+  font-family:Cinzel,Georgia,serif!important;
+  color:#bd94e7!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  line-height:1.5!important;
+}
+.creator .creator-copy .character-bio .bio-voice p,
+.creator .creator-copy .character-bio .bio-voice p em,
+.creator .creator-copy .character-bio .bio-voice p strong {
+  font-weight:400!important;
+  font-style:normal!important;
+}
