@@ -153,3 +153,37 @@
   line-height:1.5!important;
   border-left:3px solid #82b9ff!important;
 }
+
+/* Consistent raised, tactile buttons across the AUTOPILOT experience */
+:root{--button-lift:6px;--button-depth:#350c0b}
+.btn,.social,.charlotte-button span,.wake-gate .btn,.death-screen .rescue,
+.evidence-head button,.reader-controls button,.page-next,.hidden-envelope,
+.cover-door span,.killbox-door .look-inside{
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease!important;
+}
+.btn,.wake-gate .btn,.death-screen .rescue{
+  position:relative;
+  box-shadow:0 var(--button-lift) 0 #390d0c,0 12px 22px rgba(0,0,0,.7)!important;
+  transform:translateY(0);
+}
+.btn.danger{box-shadow:0 var(--button-lift) 0 #39312d,0 12px 22px rgba(0,0,0,.7)!important}
+.btn:hover,.social:hover,.evidence-head button:hover,.reader-controls button:hover,.page-next:hover{filter:brightness(1.14)}
+.btn:active,.wake-gate .btn:active,.death-screen .rescue:active{
+  transform:translateY(var(--button-lift))!important;
+  box-shadow:0 0 0 transparent,0 3px 9px rgba(0,0,0,.55)!important;
+}
+.social{
+  box-shadow:0 5px 0 #38312e,0 10px 18px rgba(0,0,0,.7)!important;
+  transform:translateY(0);
+}
+.social:active{transform:translateY(5px)!important;box-shadow:0 0 0 transparent!important}
+.charlotte-button span{box-shadow:0 7px 0 #390c0a,0 14px 25px #000!important}
+.charlotte-button:active span{transform:translateY(6px)!important;box-shadow:0 1px 0 #390c0a,0 5px 12px #000!important}
+.evidence-head button,.reader-controls button,.page-next{
+  box-shadow:0 5px 0 #44332b,0 10px 18px #0007;
+  transform:translateY(0);
+}
+.evidence-head button:active,.reader-controls button:active,.page-next:active{
+  transform:translateY(5px)!important;box-shadow:0 0 0 transparent!important;
+}
+@media(hover:none){.btn:hover,.social:hover{filter:none}}
