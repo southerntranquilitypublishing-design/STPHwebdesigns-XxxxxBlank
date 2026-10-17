@@ -55,3 +55,23 @@
 .rescue-charlotte.show{animation:charlotteTrapFade 1.25s ease forwards}@keyframes charlotteTrapFade{to{opacity:.9;transform:translateX(0);filter:brightness(.8) contrast(1.12)}}
 .rescue-warning{display:none;position:absolute;z-index:5;right:5vw;bottom:9vh;width:min(470px,65vw);background:rgba(25,0,0,.88);border-color:#781111;font-size:clamp(15px,2vw,22px);text-align:left}.rescue-warning.show{display:block;animation:warningIn .65s ease .45s both}@keyframes warningIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(max-width:760px){.death-screen.show{justify-content:center!important}.death-screen .death-faces{max-height:31svh}.death-screen .death-faces img{height:min(27svh,245px)}.death-duo-thought{max-width:92vw;font-size:14px;margin:1svh auto}.rescue-charlotte{width:58vw;right:-15vw;bottom:-1vh;max-height:55vh}.rescue-warning{right:5vw;bottom:6vh;width:70vw;font-size:14px}}
+
+/* Character typography and October author-page revisions */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Blaka&family=Cinzel:wght@500;700&family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap');
+.character-bio{font-family:Inter,Arial,sans-serif;max-width:820px;padding:12px 0 28px;letter-spacing:normal}
+.character-bio h3{font:800 clamp(22px,3.2vw,38px)/1.15 Inter,sans-serif;color:#e9ded5;margin:12px 0 30px}
+.bio-voice{margin:0 0 28px;padding:12px 0 12px 18px;border-left:3px solid currentColor}
+.bio-voice h4{font-size:clamp(17px,2.1vw,24px);margin:0 0 16px}
+.bio-voice p{font-size:clamp(16px,1.75vw,21px);line-height:1.55;margin:0 0 14px;overflow-wrap:anywhere}
+.blank-voice{font-family:"Times New Roman",Times,serif;color:#f0e9e0}
+.charlotte-voice{font-family:Blaka,Georgia,serif;color:#ff6767}
+.charlotte-voice p{font-size:clamp(19px,2.25vw,26px);line-height:1.4}
+.crash-voice{font-family:"Permanent Marker",cursive;color:#6da8ff}
+.crash-voice p{font-size:clamp(17px,2vw,24px)}
+.tuck-voice{font-family:Cinzel,serif;color:#bd94e7}
+.wake-gate .charlotte-gate-line{font:clamp(38px,7vw,90px)/1.08 Blaka,Georgia,serif;letter-spacing:.01em;text-transform:none;max-width:950px;margin:.35em auto}
+.death-duo-lines{position:relative;z-index:3;display:flex;gap:12px;align-items:flex-start;justify-content:center;max-width:700px;margin:1.5svh auto}
+.death-duo-lines .thought-bubble{flex:1;min-width:0;margin:0;text-align:center}
+.girl-one{font-family:"Comic Sans MS","Comic Sans",cursive;color:#ffb4d2}
+.girl-two{font-family:"Architects Daughter",cursive;color:#8cf3e4}
+@media(max-width:760px){.creator{display:block}.creator-copy{width:100%}.character-bio{padding-right:2vw}.death-duo-lines{gap:8px}.death-duo-lines .thought-bubble{font-size:clamp(13px,3.4vw,17px);padding:10px 8px}.wake-gate .charlotte-gate-line{font-size:clamp(36px,10vw,70px)}}
