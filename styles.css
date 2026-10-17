@@ -142,3 +142,14 @@
   font-weight:400!important;
   font-style:normal!important;
 }
+
+/* Charlotte impersonates Cr@sh: quoted words take his voice, not hers */
+.charlotte-page .charlotte-copy p.mock.crash-imitation {
+  font-family:"Permanent Marker","Comic Sans MS",cursive!important;
+  color:#82b9ff!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  font-size:clamp(19px,4.5vw,26px)!important;
+  line-height:1.5!important;
+  border-left:3px solid #82b9ff!important;
+}
